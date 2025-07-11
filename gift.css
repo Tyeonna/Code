@@ -29,7 +29,12 @@ html {
   font-size: 20px;
 }
 body {
-    background-color: var(--secondary-color);
+  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  margin: 0;
+  color: white;
 }
 
 .cssletter {
@@ -330,4 +335,94 @@ footer {
 
 footer svg {
   width: 100px;
+}
+
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: -1;
+}
+
+.stars span {
+  position: absolute;
+  display: block;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle linear infinite;
+}
+
+/* Shooting stars */
+.shooting-star {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1),
+              0 0 0 8px rgba(255, 255, 255, 0.1),
+              0 0 20px rgba(255, 255, 255, 1);
+  animation: shoot 3s linear infinite;
+}
+
+.shooting-star::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1), transparent);
+}
+
+/* Animations */
+@keyframes twinkle {
+  0% { transform: scale(1); opacity: 0.2; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.2; }
+}
+
+@keyframes shoot {
+  0% {
+    transform: rotate(215deg) translateX(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(215deg) translateX(-1000px);
+    opacity: 0;
+  }
+}
+
+/* Adjust envelope colors for dark theme */
+.envelope {
+  background: #2c3e50;
+  box-shadow: inset 0 0 30px -5px #1a252f, 0 0 50vw 0 #1a252f;
+}
+
+.envelope-flap::before,
+.envelope-left::before,
+.envelope-right::before,
+.envelope-bottom::before {
+  background: #2c3e50;
+  box-shadow: 0 0 30px -5px #1a252f;
+}
+
+.letter {
+  background: #34495e;
+  box-shadow: inset 0 0 20px -5px #2c3e50;
+  color: #ecf0f1;
+}
+
+.letter cite {
+  color: #ecf0f1;
 }
