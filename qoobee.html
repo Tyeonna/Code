@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Qoobee Greeting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="qoobee.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="stars"></div>
+    <div class="clouds"></div>
+    
+    <div class="qoobee-wrapper">
+      <div class="speech-bubble" id="speech-text">What's your name?</div>
+      <img src="qoobee.gif" alt="Qoobee" id="qoobee-img" class="qoobee-gif">
+    </div>
+
+    <input type="text" id="username" placeholder="Type your name here">
+    <div id="greeting"></div>
+
+    <!-- Buttons shown only for positive match -->
+    <div id="response-buttons" style="display: none;">
+      <button id="hello-btn" class="cute-btn">Hello^^</button>
+      <button id="whatever-btn" class="cute-btn">Whatever</button>
+    </div>
+
+    <!-- Gift button and envelope -->
+    <a href="gift.html" id="take-gift-btn" class="cute-btn" style="display: none;">Take it 🎁</a>
+
+
+    <div id="confetti-container"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="qoobee.js"></script>
+</body>
+</html>
